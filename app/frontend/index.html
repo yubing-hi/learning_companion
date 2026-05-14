@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>智能学伴 · 总览</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body data-page="dashboard">
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-block">
+        <div class="brand-mark">LA</div>
+        <div>
+          <div class="brand-title">智能学伴</div>
+          <p class="brand-subtitle">面向数据结构学习的智能学伴</p>
+        </div>
+      </div>
+      <nav class="nav-tabs" aria-label="主导航">
+        <a class="nav-tabs__link is-active" href="./index.html">总览</a>
+        <a class="nav-tabs__link" href="./chat.html">答疑</a>
+        <a class="nav-tabs__link" href="./practice.html">练习</a>
+        <a class="nav-tabs__link" href="./plan.html">计划</a>
+        <a class="nav-tabs__link" href="./profile.html">画像</a>
+      </nav>
+      <div class="status-cluster">
+        <div class="pill pill--soft">
+          <span class="status-dot" data-health-dot></span>
+          <span data-health-label>正在检查后端</span>
+        </div>
+        <div class="pill">
+          当前学生
+          <strong data-active-student>未绑定</strong>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-stack">
+      <section class="hero-band">
+        <div>
+          <p class="eyebrow">Learning Assistant</p>
+          <h1>更清晰地学习，更从容地进步</h1>
+          <p class="hero-copy">
+            在这里，你可以完成课程答疑、专项练习、答案评估、学习计划生成和学习画像查看。
+            每个页面围绕一种任务展开，让学习路径更清楚、操作更顺手。
+          </p>
+          <div class="hero-actions">
+            <a class="button button--primary" href="./chat.html">进入答疑台</a>
+            <a class="button button--secondary" href="./practice.html">开始练习</a>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <div class="hero-metric">
+            <span>系统能力</span>
+            <strong>画像 / RAG / 练习 / 评估 / 计划</strong>
+          </div>
+          <div class="hero-metric">
+            <span>学习方式</span>
+            <strong>提问、练习、复盘、规划一体化完成</strong>
+          </div>
+          <div class="hero-metric">
+            <span>适合场景</span>
+            <strong>课后巩固、考前复习、薄弱点查缺补漏</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-band">
+        <div class="section-heading">
+          <div>
+            <h2>开始使用</h2>
+            <p>先确认当前学生，后面几个页面会共享这份学习状态。</p>
+          </div>
+        </div>
+        <form class="surface-block" data-form="student-switch">
+          <label class="field">
+            <span>学生 ID</span>
+            <input type="text" name="student_id" data-student-input placeholder="例如 stu_001">
+          </label>
+          <div class="inline-actions">
+            <button class="button button--primary" type="submit">设为当前学生</button>
+            <button class="button button--ghost" type="button" data-action="load-profile">读取画像</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="section-band">
+        <div class="section-heading">
+          <div>
+            <h2>快速开始</h2>
+            <p>第一次使用可以直接初始化学生画像，然后前往不同页面继续学习流程。</p>
+          </div>
+        </div>
+        <div class="content-grid content-grid--dashboard">
+          <form class="surface-block surface-block--tall" data-form="profile-init">
+            <h3>初始化学生画像</h3>
+            <label class="field">
+              <span>学生 ID</span>
+              <input type="text" name="student_id" data-student-input placeholder="例如 stu_001" required>
+            </label>
+            <label class="field">
+              <span>学习目标</span>
+              <input type="text" name="target" placeholder="例如 期末达到 85 分" required>
+            </label>
+            <label class="field">
+              <span>可投入时间</span>
+              <input type="text" name="available_time" placeholder="例如 每天 1 小时" required>
+            </label>
+            <button class="button button--primary" type="submit">创建画像</button>
+          </form>
+
+          <section class="surface-block surface-block--tall">
+            <h3>当前学生快照</h3>
+            <div id="dashboardProfileSummary" class="empty-panel">
+              <p>还没有加载学生画像。先在左侧创建或读取一个学生。</p>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="section-band">
+        <div class="section-heading">
+          <div>
+            <h2>功能入口</h2>
+            <p>每个页面只负责一种核心任务，避免所有信息挤在一个大面板里。</p>
+          </div>
+        </div>
+        <div class="card-grid">
+          <a class="feature-card feature-card--blue" href="./chat.html">
+            <span class="feature-card__kicker">01</span>
+            <h3>课程答疑</h3>
+            <p>围绕知识点对话，查看知识点命中和来源。</p>
+          </a>
+          <a class="feature-card feature-card--green" href="./practice.html">
+            <span class="feature-card__kicker">02</span>
+            <h3>练习与评估</h3>
+            <p>生成选择题或简答题，提交答案后立即得到反馈。</p>
+          </a>
+          <a class="feature-card feature-card--amber" href="./plan.html">
+            <span class="feature-card__kicker">03</span>
+            <h3>学习计划</h3>
+            <p>按 3 天或 1 周生成复习安排，聚焦薄弱知识点。</p>
+          </a>
+          <a class="feature-card feature-card--rose" href="./profile.html">
+            <span class="feature-card__kicker">04</span>
+            <h3>学生画像</h3>
+            <p>查看目标、正确率、近期主题、错题记录和掌握状态。</p>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast"></div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

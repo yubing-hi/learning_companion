@@ -1,0 +1,62 @@
+[
+  {
+    "question_id": "stack_choice_001",
+    "knowledge_point": "栈",
+    "question_type": "choice",
+    "difficulty": "easy",
+    "question": "以下哪种数据结构最符合后进先出（LIFO）的特征？",
+    "options": ["栈", "队列", "链表", "图"],
+    "answer": "A",
+    "analysis": "栈的典型特征是后进先出（LIFO），即最后进入的元素最先被移除。队列是先进先出（FIFO），链表和图没有固定的进出顺序。"
+  },
+  {
+    "question_id": "stack_short_001",
+    "knowledge_point": "栈",
+    "question_type": "short_answer",
+    "difficulty": "easy",
+    "question": "简述栈的基本操作有哪些？",
+    "options": null,
+    "answer": "栈的基本操作包括：初始化栈（InitStack）、销毁栈（DestroyStack）、入栈（Push）、出栈（Pop）、取栈顶元素（GetTop/Peek）、判空（IsEmpty）、获取栈大小（Size）。",
+    "analysis": "栈是一种操作受限的线性表，只允许在栈顶进行插入和删除操作。这些基本操作构成了栈的核心功能，其中入栈和出栈是最核心的操作。"
+  },
+  {
+    "question_id": "stack_choice_002",
+    "knowledge_point": "栈",
+    "question_type": "choice",
+    "difficulty": "medium",
+    "question": "若元素1,2,3,4,5依次进栈，则以下哪个出栈序列是不可能的？",
+    "options": ["5,4,3,2,1", "2,1,5,4,3", "4,3,1,2,5", "2,3,5,4,1"],
+    "answer": "C",
+    "analysis": "栈遵循后进先出原则。选项C中，4,3出栈后，栈中剩余1,2（2在栈顶），此时应该先出2再出1，但序列中1在2之前出栈，违反了栈的LIFO特性，因此不可能。"
+  },
+  {
+    "question_id": "stack_short_002",
+    "knowledge_point": "栈",
+    "question_type": "short_answer",
+    "difficulty": "medium",
+    "question": "中缀表达式a+b*c转换为后缀表达式的过程是什么？请详细说明。",
+    "options": null,
+    "answer": "转换过程：1. 初始化空栈；2. 读取a，输出a；3. 读取+，入栈；4. 读取b，输出b；5. 读取*，优先级高于+，入栈；6. 读取c，输出c；7. 表达式结束，依次弹出栈中运算符：*, +；8. 最终后缀表达式为：abc*+",
+    "analysis": "中缀转后缀使用栈来暂存运算符。遇到操作数直接输出，遇到运算符时，如果栈顶运算符优先级不低于当前运算符，则弹出栈顶运算符输出，直到栈顶运算符优先级低于当前运算符或栈空，然后将当前运算符入栈。表达式结束后，将栈中剩余运算符依次弹出输出。"
+  },
+  {
+    "question_id": "stack_choice_003",
+    "knowledge_point": "栈",
+    "question_type": "choice",
+    "difficulty": "hard",
+    "question": "在将中缀表达式a+b-a*((c+d)/e-f)+g转换为后缀表达式的过程中，栈中同时保存的操作符的最大个数是多少？",
+    "options": ["5", "7", "9", "11"],
+    "answer": "A",
+    "analysis": "转换过程中，当处理到表达式a*((c+d)时，栈中依次保存：+、-、*、(、(，共5个操作符，这是栈中操作符数量的最大值。后续操作会弹出部分操作符，栈中操作符数量不会超过5个。"
+  },
+  {
+    "question_id": "stack_short_003",
+    "knowledge_point": "栈",
+    "question_type": "short_answer",
+    "difficulty": "hard",
+    "question": "用两个栈实现一个队列，请描述实现思路并分析时间复杂度。",
+    "options": null,
+    "answer": "实现思路：使用两个栈stack1和stack2。入队操作：将元素压入stack1。出队操作：如果stack2为空，将stack1中所有元素依次弹出并压入stack2，然后弹出stack2的栈顶元素；如果stack2不为空，直接弹出stack2的栈顶元素。时间复杂度：入队操作始终为O(1)；出队操作平均为O(1)，最坏为O(n)（当stack2为空时需要将stack1中所有元素转移到stack2）。",
+    "analysis": "两个栈实现队列的关键在于利用栈的LIFO特性来模拟队列的FIFO特性。stack1用于入队，stack2用于出队。当需要出队时，如果stack2为空，将stack1中的元素全部转移到stack2，这样就将stack1中的元素顺序反转，使得最先入队的元素位于stack2的栈顶，从而实现了队列的FIFO特性。"
+  }
+]

@@ -1,0 +1,46 @@
+{
+  "built_at": "2026-05-14T13:44:19",
+  "chunk_count": 357,
+  "chunk_size": 380,
+  "embedding_model": "text-embedding-v4",
+  "embedding_enabled": false,
+  "embedding_api_key_available": false,
+  "embedding_error": true,
+  "source_files": [
+    {
+      "name": "linked_list.md",
+      "mtime": 1777824553.9814708,
+      "size": 29545
+    },
+    {
+      "name": "queue.md",
+      "mtime": 1777002340.2111204,
+      "size": 28019
+    },
+    {
+      "name": "stack.md",
+      "mtime": 1777002340.0498555,
+      "size": 10474
+    },
+    {
+      "name": "tree_and_binarytree_01_tree_and_binary_tree_basics.md",
+      "mtime": 1777002340.4252734,
+      "size": 10105
+    },
+    {
+      "name": "tree_and_binarytree_02_binary_tree_traversal_and_threading.md",
+      "mtime": 1777002340.5377586,
+      "size": 11936
+    },
+    {
+      "name": "tree_and_binarytree_03_tree_forest_and_huffman.md",
+      "mtime": 1777002340.6814308,
+      "size": 9913
+    },
+    {
+      "name": "tree_and_binarytree_04_complexity_teaching_and_examples.md",
+      "mtime": 1777002340.81425,
+      "size": 9183
+    }
+  ]
+}

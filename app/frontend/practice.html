@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>智能学伴 · 练习与评估</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body data-page="practice">
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-block">
+        <div class="brand-mark">LA</div>
+        <div>
+          <div class="brand-title">智能学伴</div>
+          <p class="brand-subtitle">练习与评估</p>
+        </div>
+      </div>
+      <nav class="nav-tabs" aria-label="主导航">
+        <a class="nav-tabs__link" href="./index.html">总览</a>
+        <a class="nav-tabs__link" href="./chat.html">答疑</a>
+        <a class="nav-tabs__link is-active" href="./practice.html">练习</a>
+        <a class="nav-tabs__link" href="./plan.html">计划</a>
+        <a class="nav-tabs__link" href="./profile.html">画像</a>
+      </nav>
+      <div class="status-cluster">
+        <div class="pill pill--soft">
+          <span class="status-dot" data-health-dot></span>
+          <span data-health-label>正在检查后端</span>
+        </div>
+        <div class="pill">
+          当前学生
+          <strong data-active-student>未绑定</strong>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-stack">
+      <section class="section-band section-band--compact">
+        <form class="surface-inline" data-form="student-switch">
+          <label class="field field--inline">
+            <span>学生 ID</span>
+            <input type="text" name="student_id" data-student-input placeholder="例如 stu_001">
+          </label>
+          <button class="button button--secondary" type="submit">切换学生</button>
+        </form>
+      </section>
+
+      <section class="section-band">
+        <div class="two-column-layout">
+          <aside class="surface-block">
+            <h2>生成练习</h2>
+            <p class="helper-text">适合围绕某个知识点做定向训练，也能顺手更新学习画像。</p>
+            <form data-form="exercise-generate">
+              <label class="field">
+                <span>知识点</span>
+                <input type="text" name="knowledge_point" data-exercise-topic placeholder="例如 二叉树" required>
+              </label>
+              <div class="split-fields">
+                <label class="field">
+                  <span>题型</span>
+                  <select name="question_type">
+                    <option value="choice">选择题</option>
+                    <option value="short_answer">简答题</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>难度</span>
+                  <select name="difficulty">
+                    <option value="easy">easy</option>
+                    <option value="medium">medium</option>
+                    <option value="hard">hard</option>
+                  </select>
+                </label>
+              </div>
+              <button class="button button--primary" type="submit">生成练习题</button>
+            </form>
+            <div class="helper-block" id="practiceHints">
+              <p>加载学生画像后，这里会显示近期主题与薄弱知识点提示。</p>
+            </div>
+          </aside>
+
+          <section class="surface-block surface-block--tall">
+            <div class="section-heading section-heading--tight">
+              <div>
+                <h2>题目与评估</h2>
+                <p>支持选择题作答与简答题文本提交。</p>
+              </div>
+            </div>
+            <div id="exercisePanel" class="empty-panel">
+              <p>还没有练习题，先在左侧生成一题。</p>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast"></div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

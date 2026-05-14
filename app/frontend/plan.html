@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>智能学伴 · 学习计划</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body data-page="plan">
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-block">
+        <div class="brand-mark">LA</div>
+        <div>
+          <div class="brand-title">智能学伴</div>
+          <p class="brand-subtitle">学习计划</p>
+        </div>
+      </div>
+      <nav class="nav-tabs" aria-label="主导航">
+        <a class="nav-tabs__link" href="./index.html">总览</a>
+        <a class="nav-tabs__link" href="./chat.html">答疑</a>
+        <a class="nav-tabs__link" href="./practice.html">练习</a>
+        <a class="nav-tabs__link is-active" href="./plan.html">计划</a>
+        <a class="nav-tabs__link" href="./profile.html">画像</a>
+      </nav>
+      <div class="status-cluster">
+        <div class="pill pill--soft">
+          <span class="status-dot" data-health-dot></span>
+          <span data-health-label>正在检查后端</span>
+        </div>
+        <div class="pill">
+          当前学生
+          <strong data-active-student>未绑定</strong>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-stack">
+      <section class="section-band section-band--compact">
+        <form class="surface-inline" data-form="student-switch">
+          <label class="field field--inline">
+            <span>学生 ID</span>
+            <input type="text" name="student_id" data-student-input placeholder="例如 stu_001">
+          </label>
+          <button class="button button--secondary" type="submit">切换学生</button>
+          <button class="button button--ghost" type="button" data-action="load-profile">读取画像</button>
+        </form>
+      </section>
+
+      <section class="section-band">
+        <div class="content-grid">
+          <section class="surface-block">
+            <h2>生成学习计划</h2>
+            <p class="helper-text">根据学生画像中的目标、时间和掌握状态生成阶段计划。</p>
+            <div class="inline-actions">
+              <button class="button button--primary" type="button" data-plan-duration="3天">生成 3 天计划</button>
+              <button class="button button--secondary" type="button" data-plan-duration="1周">生成 1 周计划</button>
+            </div>
+            <div class="helper-block" id="planFocusSummary">
+              <p>加载画像后，这里会给出当前适合重点复习的方向。</p>
+            </div>
+          </section>
+
+          <section class="surface-block surface-block--tall">
+            <div class="section-heading section-heading--tight">
+              <div>
+                <h2>计划详情</h2>
+                <p>生成后的目标、重点知识点和每日安排会展示在这里。</p>
+              </div>
+            </div>
+            <div id="planPanel" class="empty-panel">
+              <p>还没有学习计划，点击左侧按钮即可生成。</p>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast"></div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+[
+    {
+    "question_id": "sorting_choice_001",
+    "knowledge_point": "排序算法",
+    "question_type": "choice",
+    "difficulty": "medium",
+    "question": "给定一个包含100万个整数的数组，整数范围在0到1000之间，选择最合适的排序算法。",
+    "options": ["快速排序", "堆排序", "计数排序", "归并排序"],
+    "answer": "C",
+    "analysis": "数据规模大：排除O(n²)算法；整数范围小：适合计数排序；时间复杂度：计数排序为O(n+k)，优于比较排序的O(n log n)；空间复杂度：计数排序需要O(n+k)空间，可以接受。因此选择计数排序。"
+  },
+  {
+    "question_id": "sorting_choice_002",
+    "knowledge_point": "排序算法稳定性",
+    "question_type": "choice",
+    "difficulty": "medium",
+    "question": "判断以下排序算法是否稳定：希尔排序、快速排序、归并排序。",
+    "options": ["都稳定", "都不稳定", "希尔排序和快速排序不稳定，归并排序稳定", "希尔排序稳定，快速排序和归并排序不稳定"],
+    "answer": "C",
+    "analysis": "希尔排序：不稳定（不同子序列间的交换可能改变相对次序）；快速排序：不稳定（分区时相等元素可能被分到不同区域）；归并排序：稳定（合并时遇到相等元素优先取前半部分）。因此答案为希尔排序和快速排序不稳定，归并排序稳定。"
+  },
+  {
+    "question_id": "sorting_short_001",
+    "knowledge_point": "快速排序",
+    "question_type": "short_answer",
+    "difficulty": "hard",
+    "question": "什么情况下快速排序会退化为O(n²)？如何避免？",
+    "options": null,
+    "answer": "已排序数组且固定选择首元素为枢轴时会退化；可通过随机化或三数取中避免。",
+    "analysis": "最坏情况：每次分区都极不平衡，如已排序数组且选择首元素为枢轴，导致时间复杂度为O(n²)，空间复杂度为O(n)。避免方法：1. 随机选择枢轴；2. 三数取中法选择枢轴；3. 使用三路快排处理重复元素。"
+  },
+  {
+    "question_id": "sorting_short_002",
+    "knowledge_point": "堆排序",
+    "question_type": "short_answer",
+    "difficulty": "hard",
+    "question": "为什么自底向上建堆的时间复杂度是O(n)而不是O(n log n)？",
+    "options": null,
+    "answer": "因为底层结点数量多但调整次数少，上层结点数量少但调整次数多，总体为线性时间。",
+    "analysis": "直观理解：大部分结点位于底层，调整次数少；数学推导：∑(h-i)×2^i = O(n)，其中h为树高，i为层号；对比：逐个插入建堆的时间复杂度为O(n log n)。因此自底向上建堆的时间复杂度为O(n)。"
+  }
+]

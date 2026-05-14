@@ -1,0 +1,62 @@
+[
+     {
+    "question_id": "queue_choice_001",
+    "knowledge_point": "队列",
+    "question_type": "choice",
+    "difficulty": "easy",
+    "question": "队列的典型特征是什么？",
+    "options": ["先进先出（FIFO）", "后进先出（LIFO）", "随机进出", "只能在一端操作"],
+    "answer": "A",
+    "analysis": "队列的典型特征是先进先出（FIFO），即最先进入队列的元素最先被移除。这与栈的后进先出（LIFO）特性相反。"
+  },
+  {
+    "question_id": "queue_short_001",
+    "knowledge_point": "队列",
+    "question_type": "short_answer",
+    "difficulty": "easy",
+    "question": "队列的基本操作有哪些？请列举至少5个。",
+    "options": null,
+    "answer": "队列的基本操作包括：初始化队列（InitQueue）、销毁队列（DestroyQueue）、入队（Enqueue）、出队（Dequeue）、取队头元素（GetFront/Peek）、取队尾元素（GetRear）、判空（IsEmpty）、获取队列大小（Size）。",
+    "analysis": "队列是一种操作受限的线性表，入队操作在队尾进行，出队操作在队头进行。这些基本操作构成了队列的核心功能，其中入队和出队是最核心的操作。"
+  },
+  {
+    "question_id": "queue_choice_002",
+    "knowledge_point": "队列",
+    "question_type": "choice",
+    "difficulty": "medium",
+    "question": "循环队列中，设队列容量为MAX_SIZE，队头指针为front，队尾指针为rear，则队列满的条件是？",
+    "options": ["front == rear", "(rear + 1) % MAX_SIZE == front", "rear == MAX_SIZE", "front == 0 && rear == MAX_SIZE - 1"],
+    "answer": "B",
+    "analysis": "循环队列中，为了区分队空和队满状态（两者都满足front == rear），通常采用牺牲一个存储单元的方法。队满条件为：(rear + 1) % MAX_SIZE == front，即队尾指针的下一个位置是队头指针。队空条件为：front == rear。"
+  },
+  {
+    "question_id": "queue_short_002",
+    "knowledge_point": "队列",
+    "question_type": "short_answer",
+    "difficulty": "medium",
+    "question": "什么是循环队列？为什么要使用循环队列？",
+    "options": null,
+    "answer": "循环队列是将数组在逻辑上连接成环形结构的队列实现方式。使用循环队列的原因：1. 解决顺序队列的假溢出问题（队尾达到数组末尾时，即使数组前面还有空闲空间，也无法继续入队）；2. 提高空间利用率；3. 避免频繁的数据移动。",
+    "analysis": "顺序队列存在假溢出问题，当rear达到数组末尾时，即使front前面还有空闲空间，也无法继续入队。循环队列通过模运算实现指针的循环移动，当rear或front达到数组末尾时，自动绕回到数组起始位置，从而充分利用数组空间，解决了假溢出问题。"
+  },
+  {
+    "question_id": "queue_choice_003",
+    "knowledge_point": "队列",
+    "question_type": "choice",
+    "difficulty": "hard",
+    "question": "在广度优先搜索（BFS）算法中，使用队列的作用是什么？",
+    "options": ["存储待访问的节点，保证按层次顺序访问", "存储已访问的节点，避免重复访问", "存储路径信息，用于回溯", "存储节点的优先级，选择最优节点"],
+    "answer": "A",
+    "analysis": "在BFS算法中，队列用于存储待访问的节点。算法从起始节点开始，将其入队，然后依次取出队头节点进行访问，并将其未访问的邻接节点入队。这样可以保证节点按层次顺序被访问，先访问的节点的邻接节点会先被处理，从而实现了层次遍历。"
+  },
+  {
+    "question_id": "queue_short_003",
+    "knowledge_point": "队列",
+    "question_type": "short_answer",
+    "difficulty": "hard",
+    "question": "用两个队列实现一个栈，请描述实现思路并分析时间复杂度。",
+    "options": null,
+    "answer": "实现思路：使用两个队列queue1和queue2。入栈操作：将元素加入非空队列（如果都为空，任选一个）。出栈操作：将非空队列中除最后一个元素外的所有元素依次出队并加入另一个队列，然后弹出最后一个元素。时间复杂度：入栈操作为O(1)；出栈操作为O(n)，需要移动n-1个元素。",
+    "analysis": "两个队列实现栈的关键在于利用队列的FIFO特性来模拟栈的LIFO特性。入栈时，元素加入当前使用的队列。出栈时，需要将队列中除最后一个元素外的所有元素移到另一个队列，这样最后一个元素就成为了队头元素，可以被移除，从而实现了栈的LIFO特性。这种方法的出栈操作时间复杂度较高，为O(n)。"
+  }
+]

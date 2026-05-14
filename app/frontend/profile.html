@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>智能学伴 · 学生画像</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body data-page="profile">
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-block">
+        <div class="brand-mark">LA</div>
+        <div>
+          <div class="brand-title">智能学伴</div>
+          <p class="brand-subtitle">学生画像</p>
+        </div>
+      </div>
+      <nav class="nav-tabs" aria-label="主导航">
+        <a class="nav-tabs__link" href="./index.html">总览</a>
+        <a class="nav-tabs__link" href="./chat.html">答疑</a>
+        <a class="nav-tabs__link" href="./practice.html">练习</a>
+        <a class="nav-tabs__link" href="./plan.html">计划</a>
+        <a class="nav-tabs__link is-active" href="./profile.html">画像</a>
+      </nav>
+      <div class="status-cluster">
+        <div class="pill pill--soft">
+          <span class="status-dot" data-health-dot></span>
+          <span data-health-label>正在检查后端</span>
+        </div>
+        <div class="pill">
+          当前学生
+          <strong data-active-student>未绑定</strong>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-stack">
+      <section class="section-band section-band--compact">
+        <form class="surface-inline" data-form="student-switch">
+          <label class="field field--inline">
+            <span>学生 ID</span>
+            <input type="text" name="student_id" data-student-input placeholder="例如 stu_001">
+          </label>
+          <button class="button button--secondary" type="submit">切换学生</button>
+        </form>
+      </section>
+
+      <section class="section-band">
+        <div class="two-column-layout">
+          <aside class="surface-block">
+            <h2>画像操作</h2>
+            <form data-form="profile-init">
+              <label class="field">
+                <span>学生 ID</span>
+                <input type="text" name="student_id" data-student-input placeholder="例如 stu_001" required>
+              </label>
+              <label class="field">
+                <span>学习目标</span>
+                <input type="text" name="target" placeholder="例如 期末达到 85 分" required>
+              </label>
+              <label class="field">
+                <span>可投入时间</span>
+                <input type="text" name="available_time" placeholder="例如 每天 1 小时" required>
+              </label>
+              <div class="inline-actions">
+                <button class="button button--primary" type="submit">初始化画像</button>
+                <button class="button button--ghost" type="button" data-action="load-profile">读取已有画像</button>
+              </div>
+            </form>
+          </aside>
+
+          <section class="surface-block surface-block--tall">
+            <div class="section-heading section-heading--tight">
+              <div>
+                <h2>学生画像详情</h2>
+                <p>包含目标、掌握状态、正确率、近期主题和错题情况。</p>
+              </div>
+            </div>
+            <div id="profilePanel" class="empty-panel">
+              <p>还没有加载学生画像。先在左侧初始化或读取一个学生。</p>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast"></div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

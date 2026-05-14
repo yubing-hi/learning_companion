@@ -1,0 +1,58 @@
+{
+  "student_id": "stu_test",
+  "target": "期末达85分",
+  "available_time": "每天1小时",
+  "knowledge_state": {
+    "栈": "掌握良好",
+    "队列": "一般",
+    "链表": "一般",
+    "树": "一般",
+    "二叉树": "薄弱",
+    "图": "一般",
+    "递归": "一般",
+    "排序": "一般",
+    "查找": "一般"
+  },
+  "accuracy_by_topic": {
+    "栈": 0.6,
+    "队列": 0.5,
+    "链表": 0.5,
+    "树": 0.5,
+    "二叉树": 0.35,
+    "图": 0.5,
+    "递归": 0.5,
+    "排序": 0.5,
+    "查找": 0.5
+  },
+  "wrong_questions": [
+    {
+      "question_id": "generated_818ba55f",
+      "knowledge_point": "二叉树",
+      "error_type": "概念混淆"
+    },
+    {
+      "question_id": "generated_cdd7fcc3",
+      "knowledge_point": "二叉树",
+      "error_type": "遍历顺序错误"
+    }
+  ],
+  "history": {
+    "recent_questions": [
+      "A",
+      "B",
+      "D F E B A G C",
+      "二叉树的前序、中序、后序遍历分别是什么？",
+      "图的深度优先搜索和广度优先搜索有什么不同？",
+      "C"
+    ],
+    "recent_topics": [
+      "二叉树",
+      "二叉树",
+      "二叉树",
+      "二叉树",
+      "图",
+      "栈"
+    ]
+  },
+  "updated_at": "2026-05-13T18:12:43"
+}

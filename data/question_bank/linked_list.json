@@ -1,0 +1,62 @@
+[
+    {
+    "question_id": "linked_list_choice_001",
+    "knowledge_point": "链表",
+    "question_type": "choice",
+    "difficulty": "easy",
+    "question": "链表与数组相比，最大的优势是什么？",
+    "options": ["随机访问效率高", "插入删除操作高效", "内存空间利用率高", "缓存友好性好"],
+    "answer": "B",
+    "analysis": "链表的最大优势是插入删除操作高效。在已知位置插入或删除节点时，时间复杂度为O(1)，只需修改指针即可，不需要移动元素。而数组在中间位置插入删除元素时，需要移动大量元素，时间复杂度为O(n)。"
+  },
+  {
+    "question_id": "linked_list_short_001",
+    "knowledge_point": "链表",
+    "question_type": "short_answer",
+    "difficulty": "easy",
+    "question": "单链表的节点结构包含哪些部分？",
+    "options": null,
+    "answer": "单链表的节点结构包含两部分：1. 数据域（data）：存储数据元素；2. 指针域（next）：存储指向下一个节点的地址（指针）。",
+    "analysis": "单链表的每个节点都是一个结构体，包含数据域和指针域。数据域用于存储实际的数据元素，指针域用于指向下一个节点，通过指针域将各个节点连接起来，形成链式结构。最后一个节点的指针域为NULL，表示链表结束。"
+  },
+  {
+    "question_id": "linked_list_choice_002",
+    "knowledge_point": "链表",
+    "question_type": "choice",
+    "difficulty": "medium",
+    "question": "在单链表中，要在p节点之后插入s节点，正确的操作顺序是？",
+    "options": ["s->next = p->next; p->next = s;", "p->next = s; s->next = p->next;", "s->next = p; p->next = s;", "p->next = s->next; s->next = p;"],
+    "answer": "A",
+    "analysis": "在p节点之后插入s节点的正确操作顺序是：首先将s的next指针指向p的下一个节点（s->next = p->next），然后将p的next指针指向s（p->next = s）。如果顺序颠倒，先执行p->next = s，会导致p原来的下一个节点丢失，无法正确连接。"
+  },
+  {
+    "question_id": "linked_list_short_002",
+    "knowledge_point": "链表",
+    "question_type": "short_answer",
+    "difficulty": "medium",
+    "question": "如何判断一个单链表是否有环？请描述算法思路。",
+    "options": null,
+    "answer": "使用快慢指针法：1. 初始化两个指针slow和fast，都指向链表头节点；2. slow每次移动一步（slow = slow->next），fast每次移动两步（fast = fast->next->next）；3. 如果fast或fast->next为NULL，说明链表无环；4. 如果slow和fast相遇，说明链表有环。",
+    "analysis": "快慢指针法的原理是：如果链表有环，快指针最终会追上慢指针（在环内相遇）；如果链表无环，快指针会先到达链表末尾（NULL）。时间复杂度为O(n)，空间复杂度为O(1)，是判断链表是否有环的最优算法。"
+  },
+  {
+    "question_id": "linked_list_choice_003",
+    "knowledge_point": "链表",
+    "question_type": "choice",
+    "difficulty": "hard",
+    "question": "反转一个单链表，以下哪种方法的空间复杂度最低？",
+    "options": ["递归法", "使用栈", "迭代法（三指针法）", "创建新链表"],
+    "answer": "C",
+    "analysis": "迭代法（三指针法）的空间复杂度为O(1)，只需要常数个额外指针。递归法的空间复杂度为O(n)，需要n层递归调用栈。使用栈的空间复杂度为O(n)，需要额外的栈空间。创建新链表的空间复杂度为O(n)，需要创建新的节点。因此，迭代法的空间复杂度最低。"
+  },
+  {
+    "question_id": "linked_list_short_003",
+    "knowledge_point": "链表",
+    "question_type": "short_answer",
+    "difficulty": "hard",
+    "question": "如何在O(n log n)时间复杂度内对单链表进行排序？请描述算法思路。",
+    "options": null,
+    "answer": "使用归并排序：1. 使用快慢指针找到链表的中间节点，将链表拆分为两个子链表；2. 递归地对两个子链表进行排序；3. 合并两个有序子链表。时间复杂度：拆分链表为O(log n)层，每层合并操作为O(n)，总时间复杂度为O(n log n)。空间复杂度：递归调用栈为O(log n)。",
+    "analysis": "链表不适合使用快速排序（随机访问效率低）和堆排序（需要随机访问）。归并排序是链表排序的最佳选择，因为：1. 归并排序是稳定的；2. 归并排序不需要随机访问，只需要顺序访问；3. 归并排序的时间复杂度为O(n log n)。使用快慢指针找中间节点的时间复杂度为O(n)，合并两个有序链表的时间复杂度也为O(n)。"
+  }
+]
